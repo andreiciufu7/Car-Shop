@@ -31,6 +31,12 @@ namespace Web.Controllers
         {
             return View();
         }
+
+        // GET A FORM TO ADD A CAR TO THE SELLING DATABASE
+        public async Task<IActionResult> AddToMarket()
+        {
+            return View();
+        }
         // POST: Cars/ShowSearchResult
         public async Task<IActionResult> ShowSearchResults(String SearchCar)
         {
@@ -65,7 +71,7 @@ namespace Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Brand,Model")] Car car)
+        public async Task<IActionResult> Create([Bind("Id,Brand,Model,Color")] Car car)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +103,7 @@ namespace Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Brand,Model")] Car car)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Brand,Model,Color")] Car car)
         {
             if (id != car.Id)
             {
